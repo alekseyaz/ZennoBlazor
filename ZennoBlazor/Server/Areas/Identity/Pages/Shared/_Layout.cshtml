@@ -31,7 +31,7 @@
                 <!-- Text Logo - Use this if you don't have a graphic logo -->
                 <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
                 <!-- Image Logo -->
-                <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.png" alt="alternative"></a>
+                <a class="navbar-brand logo-image" href="~/"><img src="~/images/logo.png" alt="alternative"></a>
 
                 <!-- Mobile Menu Toggle Button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,11 +42,11 @@
 
                 <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                     @{
-                        var result2 = Engine.FindView(ViewContext, "_LoginPartial2", isMainPage: false);
+                        var result2 = Engine.FindView(ViewContext, "_LoginPartial", isMainPage: false);
                     }
                     @if (result2.Success)
                     {
-                        await Html.RenderPartialAsync("_LoginPartial2");
+                        await Html.RenderPartialAsync("_LoginPartial");
                     }
                     else
                     {
