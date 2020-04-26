@@ -1,0 +1,11 @@
+@page "/authentication/logged-out"
+
+@inject NavigationManager _navigationManager
+
+@code {
+    protected override void OnAfterRender(bool firstRender)
+    {
+        _navigationManager.NavigateTo("/");
+    }
+
+}

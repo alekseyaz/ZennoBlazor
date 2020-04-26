@@ -1,0 +1,428 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime;
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("my");
+        }
+    }
+}
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <!-- Text Logo - Use this if you don't have a graphic logo -->
+    <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
+    <!-- Image Logo -->
+    <a class="navbar-brand logo-image" href="index-2.html"><img src="images/logo.png" alt="alternative"></a>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-awesome fas fa-bars"></span>
+        <span class="navbar-toggler-awesome fas fa-times"></span>
+    </button>
+    <!-- end of mobile menu toggle button -->
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="#header">Главная <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="#capabilities">Возможности</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="similarweb.html">Similarweb</a>
+            </li>
+            <LoginDisplay />
+        </ul>
+    </div>
+</nav> <!-- end of navbar -->
+<!-- end of navigation -->
+<!-- Header -->
+<Header />
+<!-- end of header -->
+<!-- Customers -->
+<div class="slider-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h5>Посещения вашего веб-проекта:</h5>
+
+                <!-- Image Slider -->
+                <div class="slider-container">
+                    <div class="swiper-container image-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="image-container">
+                                    <h2>Search</h2>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-container">
+                                    <h2>Social</h2>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-container">
+                                    <h2>Direct</h2>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-container">
+                                    <h2>Affiliate</h2>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="image-container">
+                                    <h2>Mobile</h2>
+                                </div>
+                            </div>
+                        </div> <!-- end of swiper-wrapper -->
+                    </div> <!-- end of swiper container -->
+                </div> <!-- end of slider-container -->
+                <!-- end of image slider -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of slider-1 -->
+<!-- end of customers -->
+<!-- Details 1 -->
+<div id="capabilities" class="basic-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <h2>Контролируйте свои показатели:</h2>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">География</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">Время на сайте</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">Глубина просмотра</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">Источники</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">Отказы</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">др. показатели по запросу</div>
+                        </li>
+                    </ul>
+                    <a class="btn-solid-reg" href="https://zaac.ru/user/register">НАЧАТЬ БЕСПЛАТНО</a>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/g.jpg" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-1 -->
+<!-- end of details 1 -->
+<!-- Details 2 -->
+<div class="basic-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/y.jpg" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <h2>Получите удобные инструменты работы с посещениями:</h2>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">100%-ая уникальность</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">от 10 до 10 000 в сутки</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">Распределение по дням и часам</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">География</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">др. показатели по запросу</div>
+                        </li>
+                    </ul>
+                    <a class="btn-solid-reg" href="https://zaac.ru/user/register">НАЧАТЬ БЕСПЛАТНО</a>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-2 -->
+<!-- end of details 2 -->
+<!-- Details Lightboxes -->
+<!-- Details Lightbox 1 -->
+<div id="details-lightbox-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="container">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/details-lightbox-1.svg" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Design And Plan</h3>
+                <hr>
+                <h5>Core feature</h5>
+                <p>The emailing module basically will speed up your email marketing operations while offering more subscriber control.</p>
+                <p>Do you need to build lists for your email campaigns? It just got easier with Evolo.</p>
+                <ul class="list-unstyled li-space-lg">
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">List building framework</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">Easy database browsing</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">User administration</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">Automate user signup</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">Quick formatting tools</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">Fast email checking</div>
+                    </li>
+                </ul>
+                <a class="btn-solid-reg mfp-close page-scroll" href="#request">REQUEST</a> <a class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of lightbox-basic -->
+<!-- end of details lightbox 1 -->
+<!-- Details Lightbox 2 -->
+<div id="details-lightbox-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="container">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/details-lightbox-2.svg" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Search To Optimize</h3>
+                <hr>
+                <h5>Core feature</h5>
+                <p>The emailing module basically will speed up your email marketing operations while offering more subscriber control.</p>
+                <p>Do you need to build lists for your email campaigns? It just got easier with Evolo.</p>
+                <ul class="list-unstyled li-space-lg">
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">List building framework</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">Easy database browsing</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">User administration</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">Automate user signup</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">Quick formatting tools</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-check"></i><div class="media-body">Fast email checking</div>
+                    </li>
+                </ul>
+                <a class="btn-solid-reg mfp-close page-scroll" href="#request">REQUEST</a> <a class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of lightbox-basic -->
+<!-- end of details lightbox 2 -->
+<!-- end of details lightboxes -->
+<!-- Pricing -->
+<div id="pricing" class="cards-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Тарифы и стоимость</h2>
+                <p class="p-heading p-large">
+                    Если у вас есть специфические задачи, которые не вошли в текущие тарифы,
+                    мы подберем для вас индивидуальное решение
+                </p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Card-->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">ТЕСТ</div>
+                        <div class="card-subtitle"><strong>100</strong> посещений</div>
+                        <hr class="cell-divide-hr">
+                        <div class="price">
+                            <span class="currency">$</span><span class="value">0</span>
+                        </div>
+                        <hr class="cell-divide-hr">
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">доступ ко всем параметрам</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">доступ ко всем источникам</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">возможность добавлять проекты</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">возможность добавлять посещения</div>
+                            </li>
+                        </ul>
+                        <div class="button-wrapper">
+                            <a class="btn-solid-reg page-scroll" href="https://zaac.ru/user/register">НАЧАТЬ БЕСПЛАТНО</a>
+                        </div>
+                    </div>
+                </div> <!-- end of card -->
+                <!-- end of card -->
+                <!-- Card-->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">МАСТЕР</div>
+                        <div class="card-subtitle"><strong>10 000</strong> посещений</div>
+                        <hr class="cell-divide-hr">
+                        <div class="price">
+                            <span class="currency">$</span><span class="value">19</span>
+                        </div>
+                        <hr class="cell-divide-hr">
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">доступ ко всем параметрам</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">доступ ко всем источникам</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">возможность добавлять проекты</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">возможность добавлять посещения</div>
+                            </li>
+                        </ul>
+                        <div class="button-wrapper">
+                            <a class="btn-solid-reg page-scroll" href="https://zaac.ru/user/register">НАЧАТЬ БЕСПЛАТНО</a>
+                        </div>
+                    </div>
+                </div> <!-- end of card -->
+                <!-- end of card -->
+                <!-- Card-->
+                <div class="card">
+                    <div class="label">
+                        <p class="best-value">Лучший выбор</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">ПРОФИ</div>
+                        <div class="card-subtitle"><strong>60 000</strong> посещений</div>
+                        <hr class="cell-divide-hr">
+                        <div class="price">
+                            <span class="currency">$</span><span class="value">49</span>
+                        </div>
+                        <hr class="cell-divide-hr">
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">доступ ко всем параметрам</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">доступ ко всем источникам</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">возможность добавлять проекты</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-check"></i><div class="media-body">возможность добавлять посещения</div>
+                            </li>
+                        </ul>
+                        <div class="button-wrapper">
+                            <a class="btn-solid-reg page-scroll" href="https://zaac.ru/user/register">НАЧАТЬ БЕСПЛАТНО</a>
+                        </div>
+                    </div>
+                </div> <!-- end of card -->
+                <!-- end of card -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of cards-2 -->
+<!-- end of pricing -->
+
+<div class="slider-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/testimonials-2-men-talking.svg" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-5">
+                <h2>Ответим на ваши<br />вопросы:</h2>
+                <div class="row">
+                    <div class="col-6 text-center">
+                        <a href="mailto:info@zaac.ru">
+                            <img src="images/email.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a href="http://t.me/zaac">
+                            <img src="images/telegram.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="answer-info">
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">В Telegram отвечаем в течение часа-двух.</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">По почте в течение 24 часов. </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of slider-2 -->
+<!-- Copyright -->
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="p-small">© 2019-2020 - zaac.ru - Все права защищены.</p>
+            </div> <!-- end of col -->
+        </div> <!-- enf of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of copyright -->
+<!-- end of copyright -->

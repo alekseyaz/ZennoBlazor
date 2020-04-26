@@ -1,0 +1,127 @@
+﻿@using Microsoft.AspNetCore.Hosting
+@using Microsoft.AspNetCore.Mvc.ViewEngines
+@inject IWebHostEnvironment Environment
+@inject ICompositeViewEngine Engine
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - reg</title>
+    <link rel="stylesheet" href="~/Identity/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Identity/css/site.css" />
+
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
+    <link href="~/Identity/my/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Identity/my/css/fontawesome-all.css" rel="stylesheet">
+    <link href="~/Identity/my/css/swiper.css" rel="stylesheet">
+    <link href="~/Identity/my/css/magnific-popup.css" rel="stylesheet">
+    <link href="~/Identity/my/css/styles.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top top-nav-collapse" style="
+             height: 54px;>
+            <div class="container">
+                <!-- Text Logo - Use this if you don't have a graphic logo -->
+                <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
+                <!-- Image Logo -->
+                <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.png" alt="alternative"></a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-awesome fas fa-bars"></span>
+                    <span class="navbar-toggler-awesome fas fa-times"></span>
+                </button>
+                <!-- end of mobile menu toggle button -->
+
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    @{
+                        var result2 = Engine.FindView(ViewContext, "_LoginPartial2", isMainPage: false);
+                    }
+                    @if (result2.Success)
+                    {
+                        await Html.RenderPartialAsync("_LoginPartial2");
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("The default Identity UI layout requires a partial view '_LoginPartial' " +
+                            "usually located at '/Pages/_LoginPartial' or at '/Views/Shared/_LoginPartial' to work. Based on your configuration " +
+                            $"we have looked at it in the following locations: {System.Environment.NewLine}{string.Join(System.Environment.NewLine, result2.SearchedLocations)}.");
+                    }
+                </div>
+            </div>
+        </nav> <!-- end of navbar -->
+        <!-- end of navigation -->
+    </header>
+
+
+
+
+        @*<header>
+            <nav class="navbar navbar-expand-sm navbar-light navbar-toggleable-sm bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" href="~/">fgfdgfdgfd</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        @{
+                            var result = Engine.FindView(ViewContext, "_LoginPartial", isMainPage: false);
+                        }
+                        @if (result.Success)
+                        {
+                            await Html.RenderPartialAsync("_LoginPartial");
+                        }
+                        else
+                        {
+                            throw new InvalidOperationException("The default Identity UI layout requires a partial view '_LoginPartial' " +
+                                "usually located at '/Pages/_LoginPartial' or at '/Views/Shared/_LoginPartial' to work. Based on your configuration " +
+                                $"we have looked at it in the following locations: {System.Environment.NewLine}{string.Join(System.Environment.NewLine, result.SearchedLocations)}.");
+                        }
+                    </div>
+                </div>
+            </nav>
+        </header>*@
+
+
+
+        <div class="container">
+            <main role="main" class="pb-3">
+
+                <h1>&shy;</h1>
+                <h1>&shy;</h1>
+
+
+                @RenderBody()
+            </main>
+        </div>
+
+
+
+    
+
+        <!-- Copyright -->
+        <div class="copyright" style="position: absolute;bottom: 0;width: 100%;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="p-small">© 2019-2020 - zaac.ru - Все права защищены.</p>
+                    </div> <!-- end of col -->
+                </div> <!-- enf of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of copyright -->
+        <!-- end of copyright -->
+
+        <script src="~/Identity/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/Identity/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/Identity/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+</body>
+</html>
