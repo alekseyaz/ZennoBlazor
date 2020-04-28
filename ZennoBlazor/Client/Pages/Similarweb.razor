@@ -1,269 +1,277 @@
 ﻿@page "/similarweb"
+@inject IJSRuntime JSRuntime;
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
-        <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("Scripts");
+        }
+    }
+}
 
-        <!-- Mobile Menu Toggle Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-awesome fas fa-bars"></span>
-            <span class="navbar-toggler-awesome fas fa-times"></span>
-        </button>
-        <!-- end of mobile menu toggle button -->
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <!-- Text Logo - Use this if you don't have a graphic logo -->
+    <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
+    <!-- Image Logo -->
+    <a class="navbar-brand logo-image" href="/"><img src="images/logo.svg" alt="alternative"></a>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Главная <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#capabilities">Возможности</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="similarweb.html">Similarweb</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://zaac.ru/">Вход / Регистрация</a>
-                </li>
-            </ul>
-        </div>
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="header-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <div class="text-container">
-                            <h1 class="hero-title"><span class="turquoise">Трафик для Similarweb</span><br />на Ваш сайт</h1>
-                            <p class="p-large">
-                                Выберите нужное количество посещений и начните сегодня!
-                                <br>Трафик отразится в статистике Similar через 30 дней (не ранее 7-го числа каждого месяца)
-                                <br>Получите гарантию результата!
-                            </p>
-                            <a class="btn-solid-lg page-scroll" href="#request">НАЧАТЬ</a>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                    <div class="col-lg-5">
+    <!-- Mobile Menu Toggle Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-awesome fas fa-bars"></span>
+        <span class="navbar-toggler-awesome fas fa-times"></span>
+    </button>
+    <!-- end of mobile menu toggle button -->
 
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of header-content -->
-    </header> <!-- end of header -->
-    <!-- end of header -->
-    <!-- Details 1 -->
-    <div id="desc" class="basic-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="text-container">
-                        <h2>Обратите внимание:</h2>
-                        <ul class="list-unstyled li-space-lg">
-                            <li class="media">
-                                <i class="fas fa-check"></i>
-                                <div class="media-body">Характер трафика: смешанный.</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-check"></i>
-                                <div class="media-body">Ваш сайт должен быть доступен всё время.</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-check"></i>
-                                <div class="media-body">В метрике и аналите трафик не отображается.</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-check"></i>
-                                <div class="media-body">Отчёт через месяц после 7 числа по <a rel="noreferrer" target="_blank" href="https://pro.similarweb.com/#/home/modules">ссылке</a></div>
-                            </li>
-                        </ul>
-                        <a class="btn-solid-reg" href="#request">НАЧАТЬ</a>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-6">
-                    <div class="image-container">
-                        <img class="img-fluid" src="images/similarweb/2.png" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-1 -->
-    <!-- end of details 1 -->
-    <!-- Pricing -->
-    <div id="cases" class="cards-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Кейсы</h2>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="image-container">
-                        <img class="img-fluid" src="images/similarweb/2.png" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-6">
-                    <div class="image-container">
-                        <img class="img-fluid" src="images/similarweb/3.png" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-6">
-                    <div class="image-container">
-                        <img class="img-fluid" src="images/similarweb/3-1.png" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-6">
-                    <div class="image-container">
-                        <img class="img-fluid" src="images/similarweb/3-2.png" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of cards-2 -->
-    <!-- end of pricing -->
-    <!-- Pricing -->
-    <div id="pricing" class="cards-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Тарифы и стоимость</h2>
-                    <p class="p-heading p-large">
-                        Если у вас есть специфические задачи, которые не вошли в текущие тарифы,
-                        мы подберем для вас индивидуальное решение
-                    </p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h4>+5.000 трафика в месяц — 1000 ₽ за сайт</h4>
-                    <br>
-                    <h4>+10.000 трафика в месяц — 1690 ₽ за сайт</h4>
-                    <br>
-                    <h4>+15.000 трафика в месяц — 2590 ₽ за сайт</h4>
-                    <br>
-                    <h4>+20.000 трафика в месяц — 3490 ₽ за сайт</h4>
-                    <br>
-                    <h4>+30.000 трафика в месяц — 5000₽ за сайт</h4>
-                    <br>
-                    <br>
-                    <a class="btn-solid-reg" href="#request">НАЧАТЬ</a>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of cards-2 -->
-    <!-- end of pricing -->
-    <!-- Request -->
-    <div id="request" class="form-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                </div> <!-- end of col -->
-                <div class="col-lg-6 text-center">
-                    <h3>Отправьте заявку и наши специалисты свяжутся с вами в ближайшее время!</h3>
-                    <!-- Request Form -->
-                    <div class="form-container">
-                        <form id="requestForm" data-toggle="validator" data-focus="false">
-                            <div class="form-group">
-                                <input type="text" class="form-control-input" id="rname" name="rname" required>
-                                <label class="label-control" for="rname">Имя</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control-input" id="remail" name="remail" required>
-                                <label class="label-control" for="remail">Email</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control-input" id="rsite" name="rsite">
-                                <label class="label-control" for="rsite">Адрес сайта</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <select class="form-control-select" id="rselect">
-                                    <option class="select-option" value="" disabled selected>Выбрать тариф</option>
-                                    <option class="select-option" value="5000">+5.000 трафика в месяц</option>
-                                    <option class="select-option" value="10000">+10.000 трафика в месяц</option>
-                                    <option class="select-option" value="15000">+15.000 трафика в месяц</option>
-                                    <option class="select-option" value="20000">+20.000 трафика в месяц</option>
-                                    <option class="select-option" value="30000">+30.000 трафика в месяц</option>
-                                </select>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control-textarea" id="rmessage"></textarea>
-                                <label class="label-control" for="rmessage">Сообщение (не обязательно)</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">ЗАКАЗАТЬ</button>
-                            </div>
-                            <div class="form-message">
-                                <div id="rmsgSubmit" class="h3 text-center hidden"></div>
-                            </div>
-                        </form>
-                    </div> <!-- end of form-container -->
-                    <!-- end of request form -->
-
-                </div> <!-- end of col -->
-                <div class="col-lg-3">
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of form-1 -->
-    <!-- end of request -->
-
-    <div class="slider-2">
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#header">Главная <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#capabilities">Возможности</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="similarweb">Similarweb</a>
+            </li>
+            <LoginDisplay />
+        </ul>
+    </div>
+</nav> <!-- end of navbar -->
+<!-- end of navigation -->
+<!-- Header -->
+<header id="header" class="header">
+    <div class="header-content">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
-                    <div class="image-container">
-                        <img class="img-fluid" src="images/testimonials-2-men-talking.svg" alt="alternative">
-                    </div> <!-- end of image-container -->
+                    <div class="text-container">
+                        <h1 class="hero-title"><span class="turquoise">Трафик для Similarweb</span><br />на Ваш сайт</h1>
+                        <p class="p-large">
+                            Выберите нужное количество посещений и начните сегодня!
+                            <br>Трафик отразится в статистике Similar через 30 дней (не ранее 7-го числа каждого месяца)
+                            <br>Получите гарантию результата!
+                        </p>
+                        <a class="btn-solid-lg page-scroll" href="#request">НАЧАТЬ</a>
+                    </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-5">
-                    <h2>Ответим на ваши<br />вопросы:</h2>
-                    <div class="row">
-                        <div class="col-6 text-center">
-                            <a href="mailto:info@zaac.ru">
-                                <img src="images/email.svg" alt="">
-                            </a>
-                        </div>
-                        <div class="col-6 text-center">
-                            <a href="http://t.me/zaac">
-                                <img src="images/telegram.svg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="answer-info">
-                        <ul class="list-unstyled li-space-lg">
-                            <li class="media">
-                                <i class="fas fa-check"></i>
-                                <div class="media-body">В Telegram отвечаем в течение часа-двух.</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-check"></i>
-                                <div class="media-body">По почте в течение 24 часов. </div>
-                            </li>
-                        </ul>
-                    </div>
+
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </div> <!-- end of slider-2 -->
-    <!-- Copyright -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small">© 2019-2020 - zaac.ru - Все права защищены.</p>
-                </div> <!-- end of col -->
-            </div> <!-- enf of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of copyright -->
-    <!-- end of copyright -->
+    </div> <!-- end of header-content -->
+</header> <!-- end of header -->
+<!-- end of header -->
+<!-- Details 1 -->
+<div id="desc" class="basic-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <h2>Обратите внимание:</h2>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">Характер трафика: смешанный.</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">Ваш сайт должен быть доступен всё время.</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">В метрике и аналите трафик не отображается.</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">Отчёт через месяц после 7 числа по <a rel="noreferrer" target="_blank" href="https://pro.similarweb.com/#/home/modules">ссылке</a></div>
+                        </li>
+                    </ul>
+                    <a class="btn-solid-reg" href="#request">НАЧАТЬ</a>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/similarweb/2.png" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-1 -->
+<!-- end of details 1 -->
+<!-- Pricing -->
+<div id="cases" class="cards-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Кейсы</h2>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/similarweb/2.png" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/similarweb/3.png" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/similarweb/3-1.png" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/similarweb/3-2.png" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of cards-2 -->
+<!-- end of pricing -->
+<!-- Pricing -->
+<div id="pricing" class="cards-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Тарифы и стоимость</h2>
+                <p class="p-heading p-large">
+                    Если у вас есть специфические задачи, которые не вошли в текущие тарифы,
+                    мы подберем для вас индивидуальное решение
+                </p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h4>+5.000 трафика в месяц — 1000 ₽ за сайт</h4>
+                <br>
+                <h4>+10.000 трафика в месяц — 1690 ₽ за сайт</h4>
+                <br>
+                <h4>+15.000 трафика в месяц — 2590 ₽ за сайт</h4>
+                <br>
+                <h4>+20.000 трафика в месяц — 3490 ₽ за сайт</h4>
+                <br>
+                <h4>+30.000 трафика в месяц — 5000₽ за сайт</h4>
+                <br>
+                <br>
+                <a class="btn-solid-reg" href="#request">НАЧАТЬ</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of cards-2 -->
+<!-- end of pricing -->
+<!-- Request -->
+<div id="request" class="form-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+            </div> <!-- end of col -->
+            <div class="col-lg-6 text-center">
+                <h3>Отправьте заявку и наши специалисты свяжутся с вами в ближайшее время!</h3>
+                <!-- Request Form -->
+                <div class="form-container">
+                    <form id="requestForm" data-toggle="validator" data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="rname" name="rname" required>
+                            <label class="label-control" for="rname">Имя</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="remail" name="remail" required>
+                            <label class="label-control" for="remail">Email</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="rsite" name="rsite">
+                            <label class="label-control" for="rsite">Адрес сайта</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control-select" id="rselect">
+                                <option class="select-option" value="" disabled selected>Выбрать тариф</option>
+                                <option class="select-option" value="5000">+5.000 трафика в месяц</option>
+                                <option class="select-option" value="10000">+10.000 трафика в месяц</option>
+                                <option class="select-option" value="15000">+15.000 трафика в месяц</option>
+                                <option class="select-option" value="20000">+20.000 трафика в месяц</option>
+                                <option class="select-option" value="30000">+30.000 трафика в месяц</option>
+                            </select>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" id="rmessage"></textarea>
+                            <label class="label-control" for="rmessage">Сообщение (не обязательно)</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">ЗАКАЗАТЬ</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="rmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                </div> <!-- end of form-container -->
+                <!-- end of request form -->
 
+            </div> <!-- end of col -->
+            <div class="col-lg-3">
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of form-1 -->
+<!-- end of request -->
+
+<div class="slider-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="image-container">
+                    <img class="img-fluid" src="images/testimonials-2-men-talking.svg" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-5">
+                <h2>Ответим на ваши<br />вопросы:</h2>
+                <div class="row">
+                    <div class="col-6 text-center">
+                        <a href="mailto:info@zaac.ru">
+                            <img src="images/email.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a href="http://t.me/zaac">
+                            <img src="images/telegram.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="answer-info">
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">В Telegram отвечаем в течение часа-двух.</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-check"></i>
+                            <div class="media-body">По почте в течение 24 часов. </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of slider-2 -->
+<!-- Copyright -->
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="p-small">© 2019-2020 - zaac.ru - Все права защищены.</p>
+            </div> <!-- end of col -->
+        </div> <!-- enf of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of copyright -->
+<!-- end of copyright -->
