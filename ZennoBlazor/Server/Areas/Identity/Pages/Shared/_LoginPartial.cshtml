@@ -6,13 +6,10 @@
 
 @{
     var returnUrl = "/";
-    if (Context.Request.Query.TryGetValue("returnUrl", out var existingUrl))
-    {
+    if (Context.Request.Query.TryGetValue("returnUrl", out var existingUrl)) {
         returnUrl = existingUrl;
     }
-
 }
-
 
 <ul class="navbar-nav ml-auto">
     @if (SignInManager.IsSignedIn(User))
