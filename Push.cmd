@@ -1,0 +1,2 @@
+﻿REM 
+docker-compose push

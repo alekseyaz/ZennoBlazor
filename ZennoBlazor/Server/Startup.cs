@@ -14,6 +14,8 @@ using System.Linq;
 using ZennoBlazor.Server.Data;
 using ZennoBlazor.Server.Models;
 using Microsoft.AspNetCore.HttpOverrides;
+using System;
+using Microsoft.Extensions.Logging;
 
 namespace ZennoBlazor.Server
 {
@@ -21,7 +23,10 @@ namespace ZennoBlazor.Server
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            //Configuration = configuration;
+            Configuration = new ConfigurationBuilder()
+                     .AddJsonFile("appsettings.secrets.json")
+                     .Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -48,7 +53,7 @@ namespace ZennoBlazor.Server
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
         {
             if (env.IsDevelopment())
             {
@@ -60,39 +65,37 @@ namespace ZennoBlazor.Server
             {
                 app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                //app.UseHsts();
             }
 
-            //app.UseForwardedHeaders(new ForwardedHeadersOptions
-            //{
-            //    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto | ForwardedHeaders.XForwardedHost
-            //});
+            logger.LogInformation($"env.IsDevelopment():- {env.IsDevelopment()}");
+            logger.LogInformation($"env.IsProduction():- {env.IsProduction()}");
+            logger.LogInformation($"env.EnvironmentName:- {env.EnvironmentName}");
+
 
             var forwardOptions = new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
                 //RequireHeaderSymmetry = false
             };
-
             forwardOptions.KnownNetworks.Clear();
             forwardOptions.KnownProxies.Clear();
-
             // ref: https://github.com/aspnet/Docs/issues/2384
             app.UseForwardedHeaders(forwardOptions);
-
-
-
-
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthentication();
+
+            app.Use((context, next) =>
+            {
+                //if (Environment.GetEnvironmentVariable("SSL_OFFLOAD") == "true")
+                context.Request.Scheme = "https";
+                return next();
+            });
             app.UseIdentityServer();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

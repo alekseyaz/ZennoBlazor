@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZennoBlazor.Server", "Zenno
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZennoBlazor.Client", "ZennoBlazor\Client\ZennoBlazor.Client.csproj", "{FE016E0C-FDAD-4E5D-A590-F2A3D628160B}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B5182590-231A-4737-B212-A76DC52F083D}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{14E03359-5B32-4C3E-A3C9-93EBC9700EBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{FE016E0C-FDAD-4E5D-A590-F2A3D628160B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE016E0C-FDAD-4E5D-A590-F2A3D628160B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE016E0C-FDAD-4E5D-A590-F2A3D628160B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5182590-231A-4737-B212-A76DC52F083D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5182590-231A-4737-B212-A76DC52F083D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5182590-231A-4737-B212-A76DC52F083D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5182590-231A-4737-B212-A76DC52F083D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E03359-5B32-4C3E-A3C9-93EBC9700EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E03359-5B32-4C3E-A3C9-93EBC9700EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E03359-5B32-4C3E-A3C9-93EBC9700EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E03359-5B32-4C3E-A3C9-93EBC9700EBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

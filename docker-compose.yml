@@ -2,7 +2,8 @@ version: '3.4'
 
 services:
   zennoblazor.server:
-    image: ${DOCKER_REGISTRY-}zennoblazorserver
+    image: alekseyaz/zennoblazorserver
+#    image: ${DOCKER_REGISTRY-}zennoblazorserver
     build:
       context: .
       dockerfile: ZennoBlazor/Server/Dockerfile
