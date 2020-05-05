@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   zennoblazor.server:
+    container_name: zennoblazorserver
     image: alekseyaz/zennoblazorserver
 #    image: ${DOCKER_REGISTRY-}zennoblazorserver
     build:
